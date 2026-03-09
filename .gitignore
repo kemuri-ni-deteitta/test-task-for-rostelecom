@@ -1,0 +1,25 @@
+# Maven
+target/
+
+# Build folders
+build/
+
+# IntelliJ
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+
+# Logs
+*.log
+logs/
+
+# Test reports
+allure-results/
+allure-report/
+reports/
+
+# OS files
+.DS_Store
+Thumbs.db
