@@ -4,6 +4,8 @@ import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import io.appium.java_client.AppiumBy;
 
+import java.time.Duration;
+
 import static com.codeborne.selenide.Selenide.$;
 
 public class GamePage {
@@ -23,13 +25,16 @@ public class GamePage {
                 .click();
     }
 
-    public void waitForWatchButton() {
-        watchButton.shouldBe(Condition.visible);
-    }
-
     public void clickWatchButton() {
         watchButton
                 .shouldBe(Condition.visible)
                 .click();
+    }
+
+    private final SelenideElement hintsCounter =
+            $(AppiumBy.xpath("//android.widget.TextView[@text='4']"));
+
+    public void shouldHaveFourHints() {
+        hintsCounter.shouldBe(Condition.visible);
     }
 }

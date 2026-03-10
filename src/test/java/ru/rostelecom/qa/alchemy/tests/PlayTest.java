@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 import ru.rostelecom.qa.alchemy.pages.MainMenuPage;
 import ru.rostelecom.qa.alchemy.pages.GamePage;
 import ru.rostelecom.qa.alchemy.base.AlchemyBaseTest;
+import ru.rostelecom.qa.alchemy.components.AdOverlay;
 
 public class PlayTest extends AlchemyBaseTest{
 
@@ -15,6 +16,12 @@ public class PlayTest extends AlchemyBaseTest{
         GamePage gamePage = new GamePage();
         gamePage.clickTopLeftHeaderWidget();
         gamePage.clickWatchButton();
+
+        AdOverlay adOverlay = new AdOverlay();
+        adOverlay.closeAdStepByStep();
+
+        gamePage.shouldHaveFourHints();
+
 
     }
 }
