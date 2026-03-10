@@ -7,9 +7,8 @@ import io.appium.java_client.AppiumBy;
 import java.time.Duration;
 
 import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.sleep;
 
-public class AdOverlay {
+public class AdOverlayFor3IndexAd {
 
     private final SelenideElement pageIndex1 =
             $(AppiumBy.accessibilityId("pageIndex: 1"));

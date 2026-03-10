@@ -27,7 +27,7 @@ public class GamePage {
 
     public void clickWatchButton() {
         watchButton
-                .shouldBe(Condition.visible)
+                .shouldBe(Condition.visible, Duration.ofSeconds(40))
                 .click();
     }
 

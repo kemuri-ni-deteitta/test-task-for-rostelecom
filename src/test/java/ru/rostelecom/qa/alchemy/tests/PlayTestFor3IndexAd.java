@@ -4,9 +4,9 @@ import org.junit.jupiter.api.Test;
 import ru.rostelecom.qa.alchemy.pages.MainMenuPage;
 import ru.rostelecom.qa.alchemy.pages.GamePage;
 import ru.rostelecom.qa.alchemy.base.AlchemyBaseTest;
-import ru.rostelecom.qa.alchemy.components.AdOverlay;
+import ru.rostelecom.qa.alchemy.components.AdOverlayFor3IndexAd;
 
-public class PlayTest extends AlchemyBaseTest{
+public class PlayTestFor3IndexAd extends AlchemyBaseTest{
 
     @Test
     void shouldOpenGameAfterPlayClick() {
@@ -17,8 +17,8 @@ public class PlayTest extends AlchemyBaseTest{
         gamePage.clickTopLeftHeaderWidget();
         gamePage.clickWatchButton();
 
-        AdOverlay adOverlay = new AdOverlay();
-        adOverlay.closeAdStepByStep();
+        AdOverlayFor3IndexAd adOverlayFor3IndexAd = new AdOverlayFor3IndexAd();
+        adOverlayFor3IndexAd.closeAdStepByStep();
 
         gamePage.shouldHaveFourHints();
 
