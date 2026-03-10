@@ -12,8 +12,6 @@ public class VkVideoPlaybackTest extends VkVideoBaseTest {
     @Test
     void shouldStartVideoPlayback() {
 
-//        System.out.println("Test run: " + repetitionInfo.getCurrentRepetition());
-
         // Проводим тест воспроизведения видео
         VideoPlayerPage player = new VideoPlayerPage();
         boolean playing = player.isVideoPlaying();
