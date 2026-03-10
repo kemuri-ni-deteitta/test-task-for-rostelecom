@@ -8,17 +8,15 @@ import java.net.URL;
 
 public class DriverProvider {
 
-    public static void createDriver() {
-
+    public static void createDriver(AppType appType) {
         try {
-
             UiAutomator2Options options = new UiAutomator2Options();
 
             options.setPlatformName("Android");
             options.setDeviceName("emulator-5554");
 
-            options.setAppPackage("com.vk.vkvideo");
-            options.setAppActivity("com.vk.video.screens.main.MainActivity");
+            options.setAppPackage(appType.getAppPackage());
+            options.setAppActivity(appType.getAppActivity());
 
             AndroidDriver driver = new AndroidDriver(
                     new URL("http://127.0.0.1:4723"),
@@ -28,7 +26,7 @@ public class DriverProvider {
             WebDriverRunner.setWebDriver(driver);
 
         } catch (Exception e) {
-            throw new RuntimeException("Failed to create driver", e);
+            throw new RuntimeException("Failed to create driver for app: " + appType, e);
         }
     }
 

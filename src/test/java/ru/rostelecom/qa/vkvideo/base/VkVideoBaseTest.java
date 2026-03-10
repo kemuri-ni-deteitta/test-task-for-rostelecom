@@ -2,12 +2,18 @@ package ru.rostelecom.qa.vkvideo.base;
 
 import org.junit.jupiter.api.BeforeEach;
 import ru.rostelecom.qa.core.base.BaseTest;
+import ru.rostelecom.qa.core.driver.AppType;
 import ru.rostelecom.qa.vkvideo.components.AuthBottomSheet;
 import ru.rostelecom.qa.vkvideo.components.OnboardingOverlay;
 import ru.rostelecom.qa.vkvideo.components.VideoFeed;
 import ru.rostelecom.qa.vkvideo.pages.HomePage;
 
 public class VkVideoBaseTest extends BaseTest {
+
+    @Override
+    protected AppType getAppType() {
+        return AppType.VKVIDEO;
+    }
 
     @BeforeEach
     void prepareVkVideoApp() {
@@ -27,9 +33,9 @@ public class VkVideoBaseTest extends BaseTest {
         System.out.println("Before home load");
         homePage.waitForLoaded();
 
-        // Ждём появления карточек и открываем первое видео
+        // Открываем первое видео из ленты
         VideoFeed feed = new VideoFeed();
+        System.out.println("Before first video open");
         feed.openFirstVideo();
-
     }
 }
